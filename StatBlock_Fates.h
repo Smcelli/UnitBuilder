@@ -12,9 +12,9 @@ public:
 	StatBlock_Fates(StatBlock_Fates&&) noexcept;
 	~StatBlock_Fates();
 	friend void swap(StatBlock_Fates&, StatBlock_Fates&);
-	std::array<int, BLOCK_SIZE> get_stats();
-	std::array<int, BLOCK_SIZE> get_growths();
-	std::array<int, BLOCK_SIZE> get_maxs();
+	std::array<unsigned short int, BLOCK_SIZE> get_stats();
+	std::array<unsigned short int, BLOCK_SIZE> get_growths();
+	std::array<unsigned short int, BLOCK_SIZE> get_maxs();
 
 	StatBlock_Fates& operator=(const StatBlock_Fates&);
 	StatBlock_Fates& add_block(const StatBlock_Fates&);

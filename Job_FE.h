@@ -1,15 +1,21 @@
 #pragma once
-#include "Stat_FE.h"
-#include <array>
+#include "StatBlock_Fates.h"
+#include <vector>
 #include <string>
 
-class Job_Fates
+class Job_Fates : public StatBlock_Fates
 {
-	std::string job_name;
-	int job_id;
-	std::array <Stat_FE, 8> job_statblock;
-
-
-	virtual bool isPromotedJob();
+public:
+	Job_Fates();
+	Job_Fates(const Job_Fates&);
+	Job_Fates(Job_Fates&&) noexcept;
+	friend void	swap(Job_Fates&, Job_Fates&);
+	Job_Fates& operator=(const Job_Fates&);
+	unsigned short int isPromotedJob()( return promotion_; );
+	unsigned short int move() { return move_; };
+//private:
+	unsigned short int promotion_, move_;
+	std::vector<Weapon_Rank_FE> weapon_ranks_;
+	std::vector<Ability_FE> ability_list_;
 };
 

@@ -1,9 +1,9 @@
-#include "StatBlock_Fates.h"
+#include "Job_FE.h"
 #include <stdlib.h>
 #include <time.h>
 
 int main() {
 	srand(time(NULL));
-	StatBlock_Fates stats;
-	stats.debug_print();
+	Job_Fates job;
+	job.debug_print();
 }

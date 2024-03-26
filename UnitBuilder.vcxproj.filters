@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Resource Files\JSON">
+      <UniqueIdentifier>{f8b0d449-12d1-4bbd-8a14-857a06214f04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\JSON\Skills">
+      <UniqueIdentifier>{ad50c7ee-7bd6-4a3a-b6b0-da0e0a8c2577}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Stat_FE.h">
@@ -22,6 +28,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="StatBlock_Fates.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Unit_Base_Fates.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Ability_List.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -38,5 +50,16 @@
     <ClCompile Include="StatBlock_Fates.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Unit_Base_Fates.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Ability_List.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="JSON\Skills\PersonalSkills.json">
+      <Filter>Resource Files\JSON\Skills</Filter>
+    </None>
   </ItemGroup>
 </Project>

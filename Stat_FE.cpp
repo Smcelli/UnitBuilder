@@ -3,14 +3,14 @@
 Stat_FE::Stat_FE()
 {
 	name = "default";
-	stat_ = growth_ = max_ = 0;
+	stat = growth = max = 0;
 }
 
 Stat_FE::Stat_FE(const Stat_FE &old_stat_obj)
 {
-	stat_ = old_stat_obj.stat_;
-	growth_ = old_stat_obj.growth_;
-	max_ = old_stat_obj.max_;
+	stat = old_stat_obj.stat;
+	growth = old_stat_obj.growth;
+	max = old_stat_obj.max;
 }
 
 Stat_FE::Stat_FE(Stat_FE&& other) noexcept
@@ -26,14 +26,14 @@ Stat_FE::Stat_FE(const std::string& given_name)
 }
 
 Stat_FE::Stat_FE(const std::string& given_name, 
-					const int stat, 
-					const int growth, 
-					const int max) 
+					const unsigned short int new_stat,
+					const unsigned short int new_growth,
+					const unsigned short int new_max)
 					: Stat_FE(given_name)
 {
-	stat_ = stat;
-	growth_ = growth;
-	max_ = max;
+	stat = new_stat;
+	growth = new_growth;
+	max = new_max;
 }
 
 Stat_FE::~Stat_FE()
@@ -43,22 +43,22 @@ Stat_FE::~Stat_FE()
 void swap(Stat_FE& left, Stat_FE& right)
 {
 	using std::swap;
-	swap(left.stat_, right.stat_);
-	swap(left.growth_, right.growth_);
-	swap(left.max_, right.max_);
+	swap(left.stat, right.stat);
+	swap(left.growth, right.growth);
+	swap(left.max, right.max);
 }
 
 Stat_FE& Stat_FE::operator++()
 {
-	stat_++;
+	stat++;
 	return *this;
 }
 
 Stat_FE& Stat_FE::operator+=(const Stat_FE &right_stat)
 {
-	this->stat_ += right_stat.stat_;
-	this->growth_ += right_stat.stat_;
-	this->max_ += right_stat.max_;
+	this->stat += right_stat.stat;
+	this->growth += right_stat.stat;
+	this->max += right_stat.max;
 	return *this;
 }
 
@@ -67,33 +67,33 @@ inline Stat_FE operator+(const Stat_FE& left_stat, const Stat_FE& right_stat)
 	return Stat_FE(left_stat) += right_stat;
 }
 
-Stat_FE& Stat_FE::operator+=(const int val)
+Stat_FE& Stat_FE::operator+=(const unsigned short int val)
 {
-	this->stat_ += val;
+	this->stat += val;
 	return *this;
 }
 
-inline Stat_FE operator+(const Stat_FE& left_stat, int right_val)
+inline Stat_FE operator+(const Stat_FE& left_stat, unsigned short int right_val)
 {
 	return Stat_FE(left_stat) += right_val;
 }
 
-Stat_FE& Stat_FE::operator-=(const int val)
+Stat_FE& Stat_FE::operator-=(const unsigned short int val)
 {
-	this->stat_ -= val;
+	this->stat -= val;
 	return *this;
 }
 
-inline Stat_FE operator-(const Stat_FE& left_stat, int right_val)
+inline Stat_FE operator-(const Stat_FE& left_stat, unsigned short int right_val)
 {
 	return Stat_FE(left_stat) -= right_val;
 }
 
 Stat_FE& Stat_FE::operator-=(const Stat_FE& right_stat)
 {
-	this->stat_ -= right_stat.stat_;
-	this->growth_ -= right_stat.stat_;
-	this->max_ -= right_stat.max_;
+	this->stat -= right_stat.stat;
+	this->growth -= right_stat.stat;
+	this->max -= right_stat.max;
 	return *this;
 }
 
@@ -108,31 +108,44 @@ Stat_FE& Stat_FE::operator=(Stat_FE other)
 	return *this;
 }
 
-
-int Stat_FE::roll_Stat_Up() const
+int Stat_FE::roll_stat_up(unsigned short int count)
 {
-	if (growth_ > rand() % 100)
+	for (auto i = 0; i < count; i++) {
+		if (!is_less_than_max())
+			break;
+		if (roll_growth())
+			stat++;
+	}
+	return stat;
+}
+
+
+int Stat_FE::roll_growth() const
+{
+	if (growth > rand() % 100)
 		return 0;
 	return 1;
 }
 
-int Stat_FE::is_less_than_max(int x) const
+int Stat_FE::is_less_than_mac() const
 {
-	if (x < max_)
-		return 1;
-	return 0;
+	if (stat < max)
+		return max - stat;
+	else
+		return 0;
 }
 
-int Stat_FE::stat() const
+int Stat_FE::is_less_than_max(unsigned short int x) const
 {
-	return stat_;
+	if (x < max)
+		return max-x;
+	return 0;
 }
 
 void Stat_FE::print_To_Console() const
 {
 	std::cout << " " << name 
-		<< " " << stat_
-		<< " " << growth_
-		<< " " << max_ << " ";
+		<< " " << stat
+		<< " " << growth
+		<< " " << max << " ";
 }
-

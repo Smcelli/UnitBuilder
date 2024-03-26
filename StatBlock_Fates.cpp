@@ -10,7 +10,7 @@ StatBlock_Fates::StatBlock_Fates(const StatBlock_Fates& other)
 }
 
 StatBlock_Fates::StatBlock_Fates(StatBlock_Fates&& other) noexcept
-	:StatBlock_Fates()
+	: StatBlock_Fates()
 {
 	swap(*this, other);
 }
@@ -19,29 +19,29 @@ StatBlock_Fates::~StatBlock_Fates()
 {
 }
 
-std::array<int, BLOCK_SIZE> StatBlock_Fates::get_stats()
+std::array<unsigned short int, BLOCK_SIZE> StatBlock_Fates::get_stats()
 {
-	std::array<int, BLOCK_SIZE> result;
+	std::array<unsigned short int, BLOCK_SIZE> result;
 	for (auto i = 0; i < BLOCK_SIZE; i++) {
-		result[i] = block_[i].stat_;
+		result[i] = block_[i].stat;
 	}
 	return result;
 }
 
-std::array<int, BLOCK_SIZE> StatBlock_Fates::get_growths()
+std::array<unsigned short int, BLOCK_SIZE> StatBlock_Fates::get_growths()
 {
-	std::array<int, BLOCK_SIZE> result;
+	std::array<unsigned short int, BLOCK_SIZE> result;
 	for (auto i = 0; i < BLOCK_SIZE; i++) {
-		result[i] = block_[i].growth_;
+		result[i] = block_[i].growth;
 	}
 	return result;
 }
 
-std::array<int, BLOCK_SIZE> StatBlock_Fates::get_maxs()
+std::array<unsigned short int, BLOCK_SIZE> StatBlock_Fates::get_maxs()
 {
-	std::array<int, BLOCK_SIZE> result;
+	std::array<unsigned short int, BLOCK_SIZE> result;
 	for (auto i = 0; i < BLOCK_SIZE; i++) {
-		result[i] = block_[i].max_;
+		result[i] = block_[i].max;
 	}
 	return result;
 }
