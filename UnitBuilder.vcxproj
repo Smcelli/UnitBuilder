@@ -140,16 +140,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Ability_List.h" />
+    <ClInclude Include="Ability_FE.h" />
+    <ClInclude Include="Ability_List_FE.h" />
+    <ClInclude Include="Basic_blocks_FE.h" />
+    <ClInclude Include="fe_fates_namespace.h" />
     <ClInclude Include="StatBlock_Fates.h" />
-    <ClInclude Include="Job_FE.h" />
+    <ClInclude Include="Job_Fates.h" />
     <ClInclude Include="Stat_FE.h" />
     <ClInclude Include="Unit_Base_Fates.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Ability_List.cpp" />
+    <ClCompile Include="Ability_FE.cpp" />
+    <ClCompile Include="Ability_List_FE.cpp" />
+    <ClCompile Include="Basic_blocks_FE.cpp" />
     <ClCompile Include="StatBlock_Fates.cpp" />
-    <ClCompile Include="Job_FE.cpp" />
+    <ClCompile Include="Job_Fates.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="Stat_FE.cpp" />
     <ClCompile Include="Unit_Base_Fates.cpp" />

@@ -24,7 +24,7 @@
     <ClInclude Include="Stat_FE.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Job_FE.h">
+    <ClInclude Include="Job_Fates.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="StatBlock_Fates.h">
@@ -33,7 +33,16 @@
     <ClInclude Include="Unit_Base_Fates.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Ability_List.h">
+    <ClInclude Include="Ability_List_FE.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Basic_blocks_FE.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Ability_FE.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="fe_fates_namespace.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -44,7 +53,7 @@
     <ClCompile Include="Source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Job_FE.cpp">
+    <ClCompile Include="Job_Fates.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="StatBlock_Fates.cpp">
@@ -53,7 +62,13 @@
     <ClCompile Include="Unit_Base_Fates.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Ability_List.cpp">
+    <ClCompile Include="Ability_List_FE.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Basic_blocks_FE.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Ability_FE.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
