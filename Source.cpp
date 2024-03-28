@@ -21,18 +21,18 @@ void populate_Fates(Ability_List_Fates* list)
 		static_cast<uint16_t>(0) });
 	list->add_skill(Ability_Job_Fates{ 
 		static_cast<std::string>("elbow room"), 
-		static_cast<uint16_t>(cavalier*2) , 
+		static_cast<uint16_t>(NOHR_JOB_ID + cavalier*2) , 
 		static_cast<uint16_t>(1) });
 	list->add_skill(Ability_Job_Fates{ 
 		static_cast<std::string>("shelter"),
-		static_cast<uint16_t>(cavalier*2+1) ,
+		static_cast<uint16_t>(NOHR_JOB_ID+cavalier*2+1) ,
 		static_cast<uint16_t>(10) });
 	list->add_skill(Ability_Job_Fates{
 		static_cast<std::string>("defender"),
-		static_cast<uint16_t>(paladin*2) ,
+		static_cast<uint16_t>(NOHR_JOB_ID+paladin*2) ,
 		static_cast<uint16_t>(25) });
 	list->add_skill(Ability_Job_Fates{
 		static_cast<std::string>("aegis"),
-		static_cast<uint16_t>(paladin*2+1) ,
+		static_cast<uint16_t>(NOHR_JOB_ID+paladin*2+1) ,
 		static_cast<uint16_t>(35) });
 }

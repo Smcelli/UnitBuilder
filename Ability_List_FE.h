@@ -1,13 +1,13 @@
 #pragma once
 #include "Ability_FE.h"
 #include "fe_fates_namespace.h"
-#include <map>
+#include <unordered_map>
 #include <algorithm>
 
 class Ability_List_Fates
 {
 private:
-	std::map<uint16_t,Ability_FE*> job_skills;
+	std::unordered_map<uint16_t,Ability_Job_Fates> job_skills;
 
 public:
 	~Ability_List_Fates();

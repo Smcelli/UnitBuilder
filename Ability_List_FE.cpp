@@ -29,13 +29,14 @@ Ability_List_Fates::Ability_List_Fates(Ability_List_Fates&& source) noexcept
 
 void Ability_List_Fates::add_skill(Ability_Job_Fates ability)
 {
-    job_skills.try_emplace(ability.id, new Ability_Job_Fates(ability));
+    job_skills.try_emplace(ability.id, ability);
 }
 
 void Ability_List_Fates::debug_console_print()
 {
     for (auto const& [key, val] : job_skills) {
-        val->debug_console_print();
+        val.debug_console_print();
+        std::cout << std::endl;
     }
 }
 
