@@ -1,13 +1,13 @@
 #pragma once
 #include "Ability_FE.h"
+#include "fe_fates_namespace.h"
 #include <map>
 #include <algorithm>
-#include <memory>
 
 class Ability_List_Fates
 {
 private:
-	std::map<int,std::unique_ptr<Ability_FE>> job_skills;
+	std::map<uint16_t,Ability_FE*> job_skills;
 
 public:
 	~Ability_List_Fates();
@@ -17,8 +17,7 @@ public:
 	Ability_List_Fates& operator=(Ability_List_Fates);
 	Ability_List_Fates(Ability_List_Fates&&) noexcept;
 
-	void add_skill(Ability_FE);
-	void populate_Fates();
+	void add_skill(Ability_Job_Fates);
 	void debug_console_print();
 
 };

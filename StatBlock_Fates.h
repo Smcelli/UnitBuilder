@@ -26,9 +26,9 @@ public:
 	StatBlock_Fates& operator=(StatBlock_Fates);
 	StatBlock_Fates(StatBlock_Fates&&) noexcept;
 	
-	std::array<unsigned short int, fe_fates::BLOCK_SIZE> get_stats();
-	std::array<unsigned short int, fe_fates::BLOCK_SIZE> get_growths();
-	std::array<unsigned short int, fe_fates::BLOCK_SIZE> get_maxs();
+	std::array<uint16_t, fe_fates::BLOCK_SIZE> get_stats();
+	std::array<uint16_t, fe_fates::BLOCK_SIZE> get_growths();
+	std::array<uint16_t, fe_fates::BLOCK_SIZE> get_maxs();
 	StatBlock_Fates& add_block(const StatBlock_Fates&);
 	StatBlock_Fates& subtract_block(const StatBlock_Fates&);
 	void debug_print();

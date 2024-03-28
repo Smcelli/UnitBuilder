@@ -1,9 +1,10 @@
 #pragma once
+#include <cstdint>
 
 namespace fe_fates {
-	const int BLOCK_SIZE = 8;
+	const uint16_t BLOCK_SIZE = 8;
 	enum Stat_name { hp, str, mag, skl, spd, lck, def, res };
-	const unsigned short int UNIQ_JOB_ID = 4, HOSH_JOB_ID = 64, NOHR_JOB_ID = 256;
+	const uint16_t UNIQ_JOB_ID = 4, HOSH_JOB_ID = 64, NOHR_JOB_ID = 256;
 	enum Job_id_unique {
 		nohr_prince = 0,
 		hoshido_nob,

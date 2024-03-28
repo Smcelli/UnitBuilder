@@ -24,27 +24,27 @@ StatBlock_Fates::StatBlock_Fates(StatBlock_Fates&& source) noexcept
 	swap(*this, source);
 }
 
-std::array<unsigned short int, BLOCK_SIZE> StatBlock_Fates::get_stats()
+std::array<uint16_t, BLOCK_SIZE> StatBlock_Fates::get_stats()
 {
-	std::array<unsigned short int, BLOCK_SIZE> result;
+	std::array<uint16_t, BLOCK_SIZE> result;
 	for (auto i = 0; i < BLOCK_SIZE; i++) {
 		result[i] = block_[i].stat;
 	}
 	return result;
 }
 
-std::array<unsigned short int, BLOCK_SIZE> StatBlock_Fates::get_growths()
+std::array<uint16_t, BLOCK_SIZE> StatBlock_Fates::get_growths()
 {
-	std::array<unsigned short int, BLOCK_SIZE> result;
+	std::array<uint16_t, BLOCK_SIZE> result;
 	for (auto i = 0; i < BLOCK_SIZE; i++) {
 		result[i] = block_[i].growth;
 	}
 	return result;
 }
 
-std::array<unsigned short int, BLOCK_SIZE> StatBlock_Fates::get_maxs()
+std::array<uint16_t, BLOCK_SIZE> StatBlock_Fates::get_maxs()
 {
-	std::array<unsigned short int, BLOCK_SIZE> result;
+	std::array<uint16_t, BLOCK_SIZE> result;
 	for (auto i = 0; i < BLOCK_SIZE; i++) {
 		result[i] = block_[i].max;
 	}

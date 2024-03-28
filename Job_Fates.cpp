@@ -25,7 +25,9 @@ Job_Fates& Job_Fates::operator=(Job_Fates source)
 }
 
 Job_Fates::Job_Fates(Job_Fates&& source) noexcept
-    : StatBlock_Fates{ std::move(source) }
+    : StatBlock_Fates{ std::move(source) },
+    move(0),
+    promotion(0)
 {
     swap(*this, source);
 }

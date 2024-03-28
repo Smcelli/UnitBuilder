@@ -58,7 +58,9 @@ Ability_Job_Fates& Ability_Job_Fates::operator=(Ability_Job_Fates source)
 }
 
 Ability_Job_Fates::Ability_Job_Fates(Ability_Job_Fates&& source) noexcept
-	: Ability_FE(std::move(source))
+	: Ability_FE(std::move(source)),
+	requirement(0)
+	
 {
 	swap(*this, source);
 }

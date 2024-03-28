@@ -9,7 +9,7 @@ class Stat_FE
 {
 public:
 	std::string name;
-	unsigned short int stat, growth, max;
+	uint16_t stat, growth, max;
 
 	virtual ~Stat_FE() = default;
 	Stat_FE() = default;
@@ -19,9 +19,9 @@ public:
 	Stat_FE(Stat_FE&& source) noexcept;
 
 	Stat_FE(const std::string& name,
-		const unsigned short int	stat = 0,
-		const unsigned short int	growth = 0,
-		const unsigned short int	max = 0)
+		uint16_t	stat = 0,
+		uint16_t	growth = 0,
+		uint16_t	max = 0)
 		: name(name),
 		stat(stat),
 		growth(growth),
@@ -30,13 +30,13 @@ public:
 	
 	Stat_FE& operator ++ ();
 	Stat_FE& operator += (const Stat_FE&);
-	Stat_FE& operator += (const unsigned short int);
+	Stat_FE& operator += (const uint16_t);
 	Stat_FE& operator -= (const Stat_FE&);
-	Stat_FE& operator -= (const unsigned short int);
+	Stat_FE& operator -= (const uint16_t);
 
-	int roll_stat_up(unsigned short int = 0);
+	int roll_stat_up(uint16_t = 0);
 	int roll_growth() const;
 	int is_less_than_max() const;
-	int is_less_than_max(const unsigned short int) const;
+	int is_less_than_max(const uint16_t) const;
 	void print_To_Console() const;
 };

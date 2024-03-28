@@ -8,7 +8,7 @@
 class Job_Fates : public StatBlock_Fates
 {
 public:
-	unsigned short int promotion, move;
+	uint16_t promotion, move;
 	std::vector<Weapon_Rank_FE> weapon_ranks;
 	std::vector<Ability_FE> ability_list;
 
@@ -19,7 +19,7 @@ public:
 	Job_Fates& operator=(Job_Fates);
 	Job_Fates(Job_Fates&&) noexcept;
 
-	const unsigned short int is_promoted_job() const { return promotion; };
+	const uint16_t is_promoted_job() const { return promotion; };
 //private:
 	
 };

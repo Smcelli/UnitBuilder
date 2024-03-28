@@ -44,24 +44,24 @@ inline Stat_FE operator+(const Stat_FE& left_stat, const Stat_FE& right_stat)
 	return Stat_FE(left_stat) += right_stat;
 }
 
-Stat_FE& Stat_FE::operator+=(const unsigned short int val)
+Stat_FE& Stat_FE::operator+=(const uint16_t val)
 {
 	stat += val;
 	return *this;
 }
 
-inline Stat_FE operator+(const Stat_FE& left_stat, unsigned short int right_val)
+inline Stat_FE operator+(const Stat_FE& left_stat, uint16_t right_val)
 {
 	return Stat_FE(left_stat) += right_val;
 }
 
-Stat_FE& Stat_FE::operator-=(const unsigned short int val)
+Stat_FE& Stat_FE::operator-=(const uint16_t val)
 {
 	stat -= val;
 	return *this;
 }
 
-inline Stat_FE operator-(const Stat_FE& left_stat, unsigned short int right_val)
+inline Stat_FE operator-(const Stat_FE& left_stat, uint16_t right_val)
 {
 	return Stat_FE(left_stat) -= right_val;
 }
@@ -81,7 +81,7 @@ inline Stat_FE operator-(const Stat_FE& left_stat, const Stat_FE& right_stat)
 
 
 
-int Stat_FE::roll_stat_up(unsigned short int count)
+int Stat_FE::roll_stat_up(uint16_t count)
 {
 	for (auto i = 0; i < count; i++) {
 		if (!is_less_than_max())
@@ -108,7 +108,7 @@ int Stat_FE::is_less_than_max() const
 		return 0;
 }
 
-int Stat_FE::is_less_than_max(unsigned short int x) const
+int Stat_FE::is_less_than_max(uint16_t x) const
 {
 	if (x < max)
 		return max-x;

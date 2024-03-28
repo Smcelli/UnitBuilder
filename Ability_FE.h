@@ -5,7 +5,7 @@
 struct Ability_FE
 {
 	std::string name;
-	unsigned short int id;
+	uint16_t id;
 	
 	virtual ~Ability_FE() = default;
 	Ability_FE() = default;
@@ -14,7 +14,7 @@ struct Ability_FE
 	Ability_FE& operator=(Ability_FE);
 	Ability_FE(Ability_FE&&) noexcept;
 	
-	Ability_FE(std::string name, unsigned short int id)
+	Ability_FE(std::string name, uint16_t id)
 		:name(name),
 		id(id) {}
 	virtual void debug_console_print() const;
@@ -23,7 +23,7 @@ struct Ability_FE
 
 struct Ability_Job_Fates : public Ability_FE
 {
-	unsigned short int requirement;
+	uint16_t requirement;
 
 	~Ability_Job_Fates() = default;
 	Ability_Job_Fates() = default;
@@ -32,10 +32,10 @@ struct Ability_Job_Fates : public Ability_FE
 	Ability_Job_Fates& operator=(Ability_Job_Fates);
 	Ability_Job_Fates(Ability_Job_Fates&&) noexcept;
 
-	Ability_Job_Fates(std::string name, unsigned short int id, unsigned short int requirement)
+	Ability_Job_Fates(std::string name, uint16_t id, uint16_t requirement)
 		: requirement(requirement),
 		Ability_FE(name, id){}
-	unsigned short int get_job_id() const { return id / 2; };
+	uint16_t get_job_id() const { return id / 2; };
 	void ability_effect() {};
 	void debug_console_print() const;
 };
