@@ -115,7 +115,7 @@ int Stat_FE::is_less_than_max(uint16_t x) const
 	return 0;
 }
 
-void Stat_FE::print_To_Console() const
+void Stat_FE::debug_console_print() const
 {
 	std::cout << " " << name 
 		<< " " << stat

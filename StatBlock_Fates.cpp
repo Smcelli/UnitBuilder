@@ -24,6 +24,29 @@ StatBlock_Fates::StatBlock_Fates(StatBlock_Fates&& source) noexcept
 	swap(*this, source);
 }
 
+StatBlock_Fates::StatBlock_Fates(
+	std::array<uint16_t, fe_fates::BLOCK_SIZE> stats, 
+	std::array<uint16_t, fe_fates::BLOCK_SIZE> growths, 
+	std::array<uint16_t, fe_fates::BLOCK_SIZE> maxs)
+{
+	for (auto i = 0; i < BLOCK_SIZE; i++) {
+		block_[i] = Stat_FE{"", stats[i], growths[i], maxs[i]};
+	}
+}
+
+StatBlock_Fates::StatBlock_Fates(
+	std::array<int, fe_fates::BLOCK_SIZE> stats,
+	std::array<int, fe_fates::BLOCK_SIZE> growths,
+	std::array<int, fe_fates::BLOCK_SIZE> maxs)
+{
+	for (auto i = 0; i < BLOCK_SIZE; i++) {
+		block_[i] = Stat_FE{ "", 
+			static_cast<uint16_t>(stats[i]), 
+			static_cast<uint16_t>(growths[i]),
+			static_cast<uint16_t>(maxs[i])};
+	}
+}
+
 std::array<uint16_t, BLOCK_SIZE> StatBlock_Fates::get_stats()
 {
 	std::array<uint16_t, BLOCK_SIZE> result;
@@ -75,10 +98,10 @@ StatBlock_Fates& StatBlock_Fates::subtract_block(const StatBlock_Fates& other)
 	return *this;
 }
 
-void StatBlock_Fates::debug_print()
+void StatBlock_Fates::debug_console_print() const
 {
 	for (const auto& stats : block_) {
-		stats.print_To_Console();
+		stats.debug_console_print();
 	}
 }
 

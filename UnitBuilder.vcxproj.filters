@@ -45,6 +45,12 @@
     <ClInclude Include="fe_fates_namespace.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Job_List_Fates.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Bonus_statblock.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Stat_FE.cpp">
@@ -69,6 +75,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Ability_FE.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Job_List_Fates.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Bonus_statblock.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

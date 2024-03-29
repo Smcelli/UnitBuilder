@@ -27,7 +27,6 @@ public:
 		growth(growth),
 		max(max) {};
 	
-	
 	Stat_FE& operator ++ ();
 	Stat_FE& operator += (const Stat_FE&);
 	Stat_FE& operator += (const uint16_t);
@@ -38,5 +37,5 @@ public:
 	int roll_growth() const;
 	int is_less_than_max() const;
 	int is_less_than_max(const uint16_t) const;
-	void print_To_Console() const;
+	void debug_console_print() const;
 };
