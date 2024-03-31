@@ -1,7 +1,5 @@
 #pragma once
 #include "StatBlock_Fates.h"
-#include "Basic_blocks_FE.h"
-#include "Ability_List_FE.h"
 #include "fe_fates_namespace.h"
 #include "Bonus_statblock.h"
 #include <vector>
@@ -26,7 +24,7 @@ public:
 	Job_Fates( std::string,
 		StatBlock_Fates,
 		Bonus_statblock,
-		fe_fates::Job_name id,
+		uint16_t id,
 		int promotion, 
 		int move
 	);

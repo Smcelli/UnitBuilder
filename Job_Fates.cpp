@@ -43,7 +43,7 @@ Job_Fates::Job_Fates(Job_Fates&& source) noexcept
 Job_Fates::Job_Fates(std::string name,
     StatBlock_Fates block,
     Bonus_statblock b_block,
-    fe_fates::Job_name id,
+    uint16_t id,
     int promotion,
     int move)
     :StatBlock_Fates(block),
@@ -60,13 +60,9 @@ void Job_Fates::debug_console_print() const
         << " id: " << id
         << " promoted: " << promotion
         << " move: " << move 
-        << endl << "pair up bonus: ";
-    for (auto i = 0; i < BLOCK_SIZE; i++) {
-        cout << " " << i
-            << ":" << pair_bonus.block_val(i)
-            << " ";
-    }
-    cout << pair_bonus.move() << endl;
+        << endl << " pair up bonus: ";
+    pair_bonus.debug_console_print();
+    cout << endl << " Stats ";
     StatBlock_Fates::debug_console_print();
     cout << endl;
 }

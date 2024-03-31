@@ -3,19 +3,19 @@
 #include "fe_fates_namespace.h"
 #include <array>
 
-using fe_fates::BLOCK_SIZE;
+using namespace fe_fates;
 class StatBlock_Fates
 {
 private:
 	std::array <Stat_FE, fe_fates::BLOCK_SIZE> block_{ {
-			Stat_FE{"Max HP"},
-			Stat_FE{"Strength"},
-			Stat_FE{"Magic"},
-			Stat_FE{"Skill"},
-			Stat_FE{"Speed"},
-			Stat_FE{"Luck"},
-			Stat_FE{"Defense"},
-			Stat_FE{"Resistance"},
+			Stat_FE{fates_names.at(Stat_places::hp + STAT_ID)},
+			Stat_FE{fates_names.at(Stat_places::str + STAT_ID)},
+			Stat_FE{fates_names.at(Stat_places::mag + STAT_ID)},
+			Stat_FE{fates_names.at(Stat_places::skl + STAT_ID)},
+			Stat_FE{fates_names.at(Stat_places::spd + STAT_ID)},
+			Stat_FE{fates_names.at(Stat_places::lck + STAT_ID)},
+			Stat_FE{fates_names.at(Stat_places::def + STAT_ID)},
+			Stat_FE{fates_names.at(Stat_places::res + STAT_ID)},
 			} };
 	
 public:

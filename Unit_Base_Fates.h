@@ -5,6 +5,7 @@
 
 class Unit_Base_Fates :
 	public StatBlock_Fates
+
 {
 public:
 	//Unit_Base_Fates();

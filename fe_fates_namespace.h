@@ -1,18 +1,37 @@
 #pragma once
 #include <cstdint>
+#include <unordered_map>
+#include <string>
+#include <iostream>
 
 namespace fe_fates {
-	const uint16_t BLOCK_SIZE = 8, COMMON_JOB = 16, JOB_SKILL = 128;
-	enum Stat_name : uint16_t { hp, str, mag, skl, spd, lck, def, res };
+	const uint16_t BLOCK_SIZE = 8, 
+		STAT_ID = 4,  
+		UNIQUE_JOB_ID = 16, 
+		COMMON_JOB_ID = 32, 
+		JOB_SKILL_ID = 128;
 
-	enum Skill_requirements : uint16_t {
+	enum Stat_places : uint16_t { hp, str, mag, skl, spd, lck, def, res, mov };
+	const std::unordered_map<uint16_t, std::string> fates_names {
+		{hp  + STAT_ID, "Max Health"},
+		{str + STAT_ID, "Strength"},
+		{mag + STAT_ID, "Magic"},
+		{skl + STAT_ID, "Skill"},
+		{spd + STAT_ID, "Speed"},
+		{lck + STAT_ID, "Luck"},
+		{def + STAT_ID, "Defence"},
+		{res + STAT_ID, "Resistance"},
+		{mov + STAT_ID, "Movement"}
+	};
+
+	const enum Skill_requirements : uint16_t {
 		unpromo_first = 1,
 		unpromo_second = 10,
 		promo_first = 25,
 		promo_second = 35
 	};
 
-	enum Job_name : uint16_t {
+	const enum Job_ids : uint16_t {
 		debug_job,
 		nohr_prince = 3,
 		hoshido_nob,

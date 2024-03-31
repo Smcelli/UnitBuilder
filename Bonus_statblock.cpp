@@ -33,6 +33,16 @@ void Bonus_statblock::set_block( std::array<uint16_t, BLOCK_SIZE> b)
 	block_ = b;
 }
 
+void Bonus_statblock::debug_console_print() const
+{
+	using std::cout, std::endl;
+	for (auto i = 0; i < BLOCK_SIZE; i++) {
+		cout << " [" << fe_fates::fates_names.at(STAT_ID + i) << " : "
+			<< block_[i] << "] ";
+	}
+	cout << " [Movement : " << move_;
+}
+
 Bonus_statblock Bonus_statblock::operator+=(const Bonus_statblock& right)
 {
 	move_ += right.move_;

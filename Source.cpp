@@ -26,19 +26,19 @@ void populate_fates_abilities(Ability_List_Fates* list)
 		static_cast<uint16_t>(0) });
 	list->add_skill(Ability_Job_Fates{ 
 		std::string("elbow room"), 
-		(JOB_SKILL + cavalier*2) , 
+		(JOB_SKILL_ID + cavalier*2) , 
 		(unpromo_first) });
 	list->add_skill(Ability_Job_Fates{ 
 		std::string("shelter"),
-		(JOB_SKILL + (cavalier*2) +1) ,
+		(JOB_SKILL_ID + (cavalier*2) +1) ,
 		(unpromo_second) });
 	list->add_skill(Ability_Job_Fates{
 		std::string("defender"),
-		(JOB_SKILL + paladin*2) ,
+		(JOB_SKILL_ID + paladin*2) ,
 		(promo_first)});
 	list->add_skill(Ability_Job_Fates{
 		std::string("aegis"),
-		(JOB_SKILL + (paladin*2) +1) ,
+		(JOB_SKILL_ID + (paladin*2) +1) ,
 		(promo_second)});
 }
 
@@ -55,7 +55,7 @@ void populate_fates_jobs(Job_List_Fates* list) {
 			std::array<int, BLOCK_SIZE>{0},
 			0
 		},
-		debug_job,
+		debug_job + UNIQUE_JOB_ID,
 		0,
 		0
 	});
@@ -70,7 +70,7 @@ void populate_fates_jobs(Job_List_Fates* list) {
 			std::array<int, BLOCK_SIZE> {0, 200,0,0,0,0,200,200},
 			0
 		},
-		cavalier,
+		cavalier + COMMON_JOB_ID,
 		0,
 		7
 	});
@@ -85,7 +85,7 @@ void populate_fates_jobs(Job_List_Fates* list) {
 			std::array<int, BLOCK_SIZE> {0, 200,0,0,0,0,200,200},
 			1
 		},
-		paladin,
+		paladin + COMMON_JOB_ID,
 		1,
 		8
 	});
@@ -100,7 +100,7 @@ void populate_fates_jobs(Job_List_Fates* list) {
 			std::array<int, BLOCK_SIZE> {0, 200,0,0,0,0,400,0},
 			1
 		},
-		great_knight_cav,
+		great_knight_cav + COMMON_JOB_ID,
 		1,
 		7
 	});

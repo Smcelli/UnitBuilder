@@ -24,6 +24,7 @@ public:
 	uint16_t block_val(int i) const { return block_[i]; }
 	void set_move(uint16_t m) { move_ = m; }
 	void set_block(std::array<uint16_t, BLOCK_SIZE>);
+	void debug_console_print() const;
 
 	Bonus_statblock operator+= (const Bonus_statblock&);
 	Bonus_statblock operator-= (const Bonus_statblock&);
