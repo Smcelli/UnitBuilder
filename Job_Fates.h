@@ -8,11 +8,9 @@
 class Job_Fates : public StatBlock_Fates
 {
 public:
-	std::string name;
-	uint16_t id, promotion, move;
-	// std::vector<Weapon_Rank_FE> weapon_ranks; revisit how weapon ranks are handled eventually
-	std::vector<uint16_t> ability_list;
-	Bonus_statblock pair_bonus;
+	uint16_t promotion, move;
+	std::vector<Weapon_Rank_FE> weapon_ranks;
+	std::vector<Ability_FE> ability_list;
 
 	~Job_Fates() = default;
 	Job_Fates() = default;
