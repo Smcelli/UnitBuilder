@@ -1,20 +1,28 @@
 #include "fe_fates_namespace.h"
 #include "Ability_List_FE.h"
 #include "Job_List_Fates.h"
+#include "Unit_Base_Fates.h"
 #include <stdlib.h>
 #include <time.h>
 
 void populate_fates_abilities(Ability_List_Fates*);
 void populate_fates_jobs(Job_List_Fates*);
+void populate_fates_units(std::unordered_map<uint16_t, Unit_Base_Fates>* units);
 
 int main() {
 	srand(time(NULL));
 	Ability_List_Fates abilities;
 	Job_List_Fates jobs;
+	std::unordered_map<uint16_t, Unit_Base_Fates> units;
 	populate_fates_abilities(&abilities);
 	populate_fates_jobs(&jobs);
+	populate_fates_units(&units);
 	abilities.debug_console_print();
 	jobs.debug_console_print();
+	for (const auto& [key, val] : units) {
+		val.debug_console_print();
+		std::cout << std::endl;
+	}
 }
 
 void populate_fates_abilities(Ability_List_Fates* list)
@@ -97,11 +105,39 @@ void populate_fates_jobs(Job_List_Fates* list) {
 			std::array<int, BLOCK_SIZE> {6500, 3500,2500,2900,2700,2800,3700,2800}
 		},
 		Bonus_statblock{
-			std::array<int, BLOCK_SIZE> {0, 200,0,0,0,0,400,0},
-			1
-		},
+			std::array<int, BLOCK_SIZE> {0, 200,0,0,0,0,400,0}, 1 },
 		great_knight_cav + COMMON_JOB_ID,
 		1,
 		7
 	});
 }
+
+void populate_fates_units(std::unordered_map<uint16_t, Unit_Base_Fates>* units) {
+	units->try_emplace(UNIT_ID + silas_h, Unit_Base_Fates{
+		"Silas",
+		StatBlock_Fates{
+			std::array<int, BLOCK_SIZE> {2200, 1100, 0, 900, 800, 700, 1000, 500},
+			std::array<int, BLOCK_SIZE> {50, 60, 5, 60, 50, 55, 50, 30},
+			std::array<int, BLOCK_SIZE> {0, 100, 0, 200, 0, -100, 0, -100 }
+		},
+		Bonus_statblock{std::array <int, BLOCK_SIZE> {0, 200, 0, 100, 100, 0, 100, 0}, 0},
+		Ability_FE {"Vow of Friendship", UNIT_SKILL_ID + silas_h},
+		UNIT_ID + silas_h, COMMON_JOB_ID + cavalier, COMMON_JOB_ID + mercenary,
+		6, 0, 0,
+		std::vector<uint16_t> {jacob_1, jacob_2, kaze_h, ryoma, sophie},
+		std::vector<uint16_t> {felicia_1, felicia_2, azura, mozu, hinoka, sakura, rinkah, orochi, kagero, hana, setsuna, oboro},
+		std::vector<uint16_t> {cavalier}
+		});
+}
+
+/*
+std::string name,
+StatBlock_Fates sb,
+Bonus_statblock bb,
+Ability_FE ap,
+uint id, uint job_p, uint job_s,
+int l, int l_off, int promo, 
+std::vector<int> sf = {},
+std::vector<int> sm = {},
+std::vector<int> al = {}
+*/
