@@ -29,7 +29,7 @@ void Ability_List_Fates::add_skill(Ability_Job_Fates ability)
 
 void Ability_List_Fates::debug_console_print() const
 {
-    for (auto const& [key, val] : abilities) {
+    for (const auto& [key, val] : abilities) {
         val.debug_console_print();
         std::cout << std::endl;
     }
