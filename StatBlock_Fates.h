@@ -27,18 +27,18 @@ public:
 	StatBlock_Fates(StatBlock_Fates&&) noexcept;
 	
 	StatBlock_Fates(
-		std::array<uint16_t, fe_fates::BLOCK_SIZE>, 
-		std::array<uint16_t, fe_fates::BLOCK_SIZE>, 
-		std::array<uint16_t, fe_fates::BLOCK_SIZE>);
+		std::array<int16_t, fe_fates::BLOCK_SIZE>, 
+		std::array<int16_t, fe_fates::BLOCK_SIZE>, 
+		std::array<int16_t, fe_fates::BLOCK_SIZE>);
 
 	StatBlock_Fates(
 		std::array<int, fe_fates::BLOCK_SIZE>,
 		std::array<int, fe_fates::BLOCK_SIZE>,
 		std::array<int, fe_fates::BLOCK_SIZE>);
 
-	std::array<uint16_t, fe_fates::BLOCK_SIZE> get_stats();
-	std::array<uint16_t, fe_fates::BLOCK_SIZE> get_growths();
-	std::array<uint16_t, fe_fates::BLOCK_SIZE> get_maxs();
+	std::array<int16_t, fe_fates::BLOCK_SIZE> get_stats();
+	std::array<int16_t, fe_fates::BLOCK_SIZE> get_growths();
+	std::array<int16_t, fe_fates::BLOCK_SIZE> get_maxs();
 	StatBlock_Fates& add_block(const StatBlock_Fates&);
 	StatBlock_Fates& subtract_block(const StatBlock_Fates&);
 	void debug_console_print() const;

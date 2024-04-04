@@ -9,7 +9,7 @@ class Stat_FE
 {
 public:
 	std::string name;
-	uint16_t stat, growth, max;
+	int16_t stat, growth, max;
 
 	virtual ~Stat_FE() = default;
 	Stat_FE() = default;
@@ -19,9 +19,9 @@ public:
 	Stat_FE(Stat_FE&& source) noexcept;
 
 	Stat_FE(const std::string& name,
-		uint16_t	stat = 0,
-		uint16_t	growth = 0,
-		uint16_t	max = 0)
+		int16_t	stat = 0,
+		int16_t	growth = 0,
+		int16_t		max = 0)
 		: name(name),
 		stat(stat),
 		growth(growth),

@@ -25,9 +25,9 @@ StatBlock_Fates::StatBlock_Fates(StatBlock_Fates&& source) noexcept
 }
 
 StatBlock_Fates::StatBlock_Fates(
-	std::array<uint16_t, fe_fates::BLOCK_SIZE> stats, 
-	std::array<uint16_t, fe_fates::BLOCK_SIZE> growths, 
-	std::array<uint16_t, fe_fates::BLOCK_SIZE> maxs)
+	std::array<int16_t, fe_fates::BLOCK_SIZE> stats, 
+	std::array<int16_t, fe_fates::BLOCK_SIZE> growths, 
+	std::array<int16_t, fe_fates::BLOCK_SIZE> maxs)
 {
 	for (auto i = 0; i < BLOCK_SIZE; i++) {
 		block_[i] = Stat_FE{"", stats[i], growths[i], maxs[i]};
@@ -41,33 +41,33 @@ StatBlock_Fates::StatBlock_Fates(
 {
 	for (auto i = 0; i < BLOCK_SIZE; i++) {
 		block_[i] = Stat_FE{ "", 
-			static_cast<uint16_t>(stats[i]), 
-			static_cast<uint16_t>(growths[i]),
-			static_cast<uint16_t>(maxs[i])};
+			static_cast<int16_t>(stats[i]), 
+			static_cast<int16_t>(growths[i]),
+			static_cast<int16_t>(maxs[i])};
 	}
 }
 
-std::array<uint16_t, BLOCK_SIZE> StatBlock_Fates::get_stats()
+std::array<int16_t, BLOCK_SIZE> StatBlock_Fates::get_stats()
 {
-	std::array<uint16_t, BLOCK_SIZE> result;
+	std::array<int16_t, BLOCK_SIZE> result;
 	for (auto i = 0; i < BLOCK_SIZE; i++) {
 		result[i] = block_[i].stat;
 	}
 	return result;
 }
 
-std::array<uint16_t, BLOCK_SIZE> StatBlock_Fates::get_growths()
+std::array<int16_t, BLOCK_SIZE> StatBlock_Fates::get_growths()
 {
-	std::array<uint16_t, BLOCK_SIZE> result;
+	std::array<int16_t, BLOCK_SIZE> result;
 	for (auto i = 0; i < BLOCK_SIZE; i++) {
 		result[i] = block_[i].growth;
 	}
 	return result;
 }
 
-std::array<uint16_t, BLOCK_SIZE> StatBlock_Fates::get_maxs()
+std::array<int16_t, BLOCK_SIZE> StatBlock_Fates::get_maxs()
 {
-	std::array<uint16_t, BLOCK_SIZE> result;
+	std::array<int16_t, BLOCK_SIZE> result;
 	for (auto i = 0; i < BLOCK_SIZE; i++) {
 		result[i] = block_[i].max;
 	}

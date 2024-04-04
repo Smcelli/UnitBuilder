@@ -23,19 +23,14 @@ void swap(Job_Fates& left_side, Job_Fates& right_side)
     swap(static_cast<StatBlock_Fates&>(left_side), static_cast<StatBlock_Fates&>(right_side));
 }
 
-Job_Fates& Job_Fates::operator=(Job_Fates source)
+Job_Fates& Job_Fates::operator=(Job_Fates temp)
 {
-    swap(*this, source);
+    swap(*this, temp);
     return *this;
 }
 
 Job_Fates::Job_Fates(Job_Fates&& source) noexcept
-    : StatBlock_Fates{ std::move(source) },
-    name(std::string("default")),
-    id(0),
-    move(0),
-    promotion(0),
-    pair_bonus({})
+    : Job_Fates()
 {
     swap(*this, source);
 }
@@ -50,8 +45,8 @@ Job_Fates::Job_Fates(std::string name,
     pair_bonus(b_block),
     name(name),
     id(id),
-    promotion(static_cast<uint16_t>(promotion)),
-    move(static_cast<uint16_t>(move)) {}
+    promotion(static_cast<int16_t>(promotion)),
+    move(static_cast<int16_t>(move)) {}
 
 void Job_Fates::debug_console_print() const
 {
