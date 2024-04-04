@@ -5,11 +5,14 @@
 #include <iostream>
 
 namespace fe_fates {
-	const uint16_t BLOCK_SIZE = 8, 
-		STAT_ID = 4,  
-		UNIQUE_JOB_ID = 16, 
-		COMMON_JOB_ID = 32, 
-		JOB_SKILL_ID = 128;
+	const uint16_t BLOCK_SIZE = 8,
+		STAT_ID = 4,
+		UNIQUE_JOB_ID = 16,
+		COMMON_JOB_ID = 32,
+		JOB_SKILL_ID = 128,
+		UNIT_ID = 256,
+		UNIT_SKILL_ID = 512;
+
 
 	enum Stat_places : uint16_t { hp, str, mag, skl, spd, lck, def, res, mov };
 	const std::unordered_map<uint16_t, std::string> fates_names {
@@ -100,5 +103,87 @@ namespace fe_fates {
 		troubadour		= 72,
 		startegist,
 		maid_butler
+	};
+
+	const enum Unit_ids : uint16_t {
+		debug_unit,
+
+		avatar,
+		azura,
+		felicia_1,
+		felicia_2,
+		jacob_1,
+		jacob_2,
+		kaze_h,
+		kaze_n,
+		silas_h,
+		silas_n,
+		shura_h,
+		shura_n,
+		izana,
+		mozu,
+
+		rinkah,
+		sakura,
+		hana,
+		subaki,
+		saizo,
+		orochi,
+		hinoka,
+		azama,
+		setsuna,
+		hayato,
+		oboro,
+		hinata,
+		takumi,
+		kagero,
+		reina,
+		kaden,
+		ryoma,
+		scarlet,
+		yukimura,
+
+		gunter,
+		elise,
+		arthur,
+		effie,
+		odin,
+		niles,
+		nyx,
+		camilla,
+		selena,
+		beruka,
+		laslow,
+		peri,
+		benny,
+		charlotte,
+		leo,
+		keaton,
+		xander,
+		flora,
+
+		kana,
+		shigure,
+		dwyer,
+		sophie,
+		midori,
+
+		shiro,
+		kiragi,
+		asugi,
+		selkie,
+		hisame,
+		mitama,
+		caeldori,
+		rhajat,
+
+		siegbert,
+		forrest,
+		ignatius,
+		velouria,
+		percy,
+		ophelia,
+		soleil,
+		nina
 	};
 }
