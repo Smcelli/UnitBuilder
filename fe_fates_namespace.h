@@ -6,25 +6,25 @@
 
 namespace fe_fates {
 	const uint16_t BLOCK_SIZE = 8,
-		STAT_ID = 4,
-		UNIQUE_JOB_ID = 16,
-		COMMON_JOB_ID = 32,
-		JOB_SKILL_ID = 128,
-		UNIT_ID = 256,
-		UNIT_SKILL_ID = 512;
+		ID_STAT = 4,
+		ID_JOB_UNIQUE = 16,
+		ID_JOB_COMMON = 32,
+		ID_SKILL_JOB = 128,
+		ID_UNIT = 256,
+		ID_SKILL_UNIT = 512;
 
 
 	enum Stat_places : uint16_t { hp, str, mag, skl, spd, lck, def, res, mov };
 	const std::unordered_map<uint16_t, std::string> fates_names {
-		{hp  + STAT_ID, "Max Health"},
-		{str + STAT_ID, "Strength"},
-		{mag + STAT_ID, "Magic"},
-		{skl + STAT_ID, "Skill"},
-		{spd + STAT_ID, "Speed"},
-		{lck + STAT_ID, "Luck"},
-		{def + STAT_ID, "Defence"},
-		{res + STAT_ID, "Resistance"},
-		{mov + STAT_ID, "Movement"}
+		{hp  + ID_STAT, "Max Health"},
+		{str + ID_STAT, "Strength"},
+		{mag + ID_STAT, "Magic"},
+		{skl + ID_STAT, "Skill"},
+		{spd + ID_STAT, "Speed"},
+		{lck + ID_STAT, "Luck"},
+		{def + ID_STAT, "Defence"},
+		{res + ID_STAT, "Resistance"},
+		{mov + ID_STAT, "Movement"}
 	};
 
 	const enum Skill_requirements : uint16_t {
@@ -184,6 +184,8 @@ namespace fe_fates {
 		percy,
 		ophelia,
 		soleil,
-		nina
+		nina,
+
+		end_units
 	};
 }

@@ -150,6 +150,7 @@
     <ClInclude Include="Job_Fates.h" />
     <ClInclude Include="Stat_FE.h" />
     <ClInclude Include="Unit_Base_Fates.h" />
+    <ClInclude Include="Unit_Factory_Fates.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Ability_FE.cpp" />
@@ -162,6 +163,7 @@
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="Stat_FE.cpp" />
     <ClCompile Include="Unit_Base_Fates.cpp" />
+    <ClCompile Include="Unit_Factory_Fates.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="JSON\Skills\PersonalSkills.json" />

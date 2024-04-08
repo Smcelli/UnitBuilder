@@ -51,6 +51,9 @@
     <ClInclude Include="Bonus_statblock.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Unit_Factory_Fates.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Stat_FE.cpp">
@@ -81,6 +84,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Bonus_statblock.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Unit_Factory_Fates.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

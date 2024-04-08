@@ -8,14 +8,14 @@ class StatBlock_Fates
 {
 private:
 	std::array <Stat_FE, fe_fates::BLOCK_SIZE> block_{ {
-			Stat_FE{fates_names.at(Stat_places::hp + STAT_ID)},
-			Stat_FE{fates_names.at(Stat_places::str + STAT_ID)},
-			Stat_FE{fates_names.at(Stat_places::mag + STAT_ID)},
-			Stat_FE{fates_names.at(Stat_places::skl + STAT_ID)},
-			Stat_FE{fates_names.at(Stat_places::spd + STAT_ID)},
-			Stat_FE{fates_names.at(Stat_places::lck + STAT_ID)},
-			Stat_FE{fates_names.at(Stat_places::def + STAT_ID)},
-			Stat_FE{fates_names.at(Stat_places::res + STAT_ID)},
+			Stat_FE{fates_names.at(Stat_places::hp + ID_STAT)},
+			Stat_FE{fates_names.at(Stat_places::str + ID_STAT)},
+			Stat_FE{fates_names.at(Stat_places::mag + ID_STAT)},
+			Stat_FE{fates_names.at(Stat_places::skl + ID_STAT)},
+			Stat_FE{fates_names.at(Stat_places::spd + ID_STAT)},
+			Stat_FE{fates_names.at(Stat_places::lck + ID_STAT)},
+			Stat_FE{fates_names.at(Stat_places::def + ID_STAT)},
+			Stat_FE{fates_names.at(Stat_places::res + ID_STAT)},
 			} };
 	
 public:
