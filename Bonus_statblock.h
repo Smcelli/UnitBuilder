@@ -18,7 +18,7 @@ public:
 
 	Bonus_statblock(
 		std::array<int, BLOCK_SIZE>,
-		int move
+		int move = 0
 	);
 	uint16_t move() const { return move_; }
 	uint16_t block_val(int i) const { return block_[i]; }

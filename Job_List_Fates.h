@@ -16,6 +16,7 @@ public:
 	Job_List_Fates(Job_List_Fates&&) noexcept;
 
 	void add_job(Job_Fates);
+	void add_job(uint16_t duplicate, uint16_t original);
 	void debug_console_print() const;
 };
 

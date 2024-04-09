@@ -10,7 +10,7 @@ Unit_Base_Fates::Unit_Base_Fates(const Unit_Base_Fates& source)
 	promotion(			source.promotion),
 	job_prim(			source.job_prim),
 	job_sec(			source.job_sec),
-	ability_learned(	source.ability_learned){}
+	job_tert(			source.job_tert){}
 
 Unit_Base_Fates Unit_Base_Fates::operator=(Unit_Base_Fates temp)
 {
@@ -38,18 +38,13 @@ void Unit_Base_Fates::debug_console_print() const
 		<< "  promotion: " << promotion
 		<< "  job id: " << job_prim
 		<< "  off job id: " << job_sec << endl;
-	cout << " learned abilities [ ";
-	for (const auto& i : ability_learned)
-		cout << i << ", ";
-	cout << "]" << endl;
 }
 
 Unit_Base_Fates::Unit_Base_Fates(std::string n, 
 	StatBlock_Fates sb, 
 	Bonus_statblock bb, 
 	uint16_t id, uint16_t job_p, uint16_t job_s,
-	int l, int l_off, int promo,
-	std::vector<uint16_t> al)
+	int l, int l_off, int promo, uint16_t job_t)
 	: StatBlock_Fates (sb),
 	name(n),
 	pair_bonus(bb),
@@ -59,12 +54,7 @@ Unit_Base_Fates::Unit_Base_Fates(std::string n,
 	promotion(promo),
 	job_prim(job_p),
 	job_sec(job_s),
-	ability_learned(al)
-{
-	if (!ability_learned.empty() && ability_learned[0] < ID_SKILL_JOB)
-		std::for_each(ability_learned.begin(), ability_learned.end(),
-			[](uint16_t& i) {i += ID_SKILL_JOB; });
-}
+	job_tert(job_t){}
 
 void swap( Unit_Base_Fates& left,  Unit_Base_Fates& right)
 {
@@ -78,5 +68,5 @@ void swap( Unit_Base_Fates& left,  Unit_Base_Fates& right)
 	swap(left.promotion,		right.promotion);
 	swap(left.job_prim,			right.job_prim);
 	swap(left.job_sec,			right.job_sec);
-	swap(left.ability_learned,	right.ability_learned);
+	swap(left.job_tert,			right.job_tert);
 }

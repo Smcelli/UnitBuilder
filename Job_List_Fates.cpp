@@ -22,6 +22,13 @@ void Job_List_Fates::add_job(Job_Fates job)
 	jobs.try_emplace(job.id, job);
 }
 
+void Job_List_Fates::add_job(uint16_t duplicate, uint16_t original)
+{
+	Job_Fates dup = jobs.at(original+ID_JOB_COMMON);
+	dup.id = duplicate+ID_JOB_COMMON;
+	jobs.try_emplace(duplicate+ID_JOB_COMMON, dup);
+}
+
 void Job_List_Fates::debug_console_print() const
 {
 	for (auto const& [key, val] : jobs) {

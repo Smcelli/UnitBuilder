@@ -6,7 +6,7 @@
 class Ability_List_Fates
 {
 private:
-	std::unordered_map<uint16_t,Ability_Job_Fates> abilities;
+	std::unordered_map<uint16_t,Ability_FE> abilities;
 
 public:
 	~Ability_List_Fates() = default;
@@ -16,7 +16,8 @@ public:
 	Ability_List_Fates& operator=(Ability_List_Fates);
 	Ability_List_Fates(Ability_List_Fates&&) noexcept;
 
-	void add_skill(Ability_Job_Fates);
+	//void add_skill(Ability_Job_Fates);
+	void add_skill(Ability_FE);
 	void debug_console_print() const;
 
 };

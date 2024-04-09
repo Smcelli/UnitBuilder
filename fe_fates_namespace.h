@@ -101,7 +101,7 @@ namespace fe_fates {
 		sorcerer,
 		dark_knight,
 		troubadour		= 72,
-		startegist,
+		strategist,
 		maid_butler
 	};
 
