@@ -37,10 +37,9 @@ void Bonus_statblock::debug_console_print() const
 {
 	using std::cout, std::endl;
 	for (auto i = 0; i < BLOCK_SIZE; i++) {
-		cout << " [" << fe_fates::fates_names.at(ID_STAT + i) << " : "
-			<< block_[i] << "] ";
+		cout << " ["<< block_[i] << "] ";
 	}
-	cout << " [Movement : " << move_;
+	cout << " [" << move_ << "] ";
 }
 
 Bonus_statblock Bonus_statblock::operator+=(const Bonus_statblock& right)

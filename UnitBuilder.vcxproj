@@ -31,6 +31,7 @@
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
+    <CLRSupport>false</CLRSupport>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -88,6 +89,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <CompileAsManaged>false</CompileAsManaged>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -146,11 +149,13 @@
     <ClInclude Include="Bonus_statblock.h" />
     <ClInclude Include="fe_fates_namespace.h" />
     <ClInclude Include="Job_List_Fates.h" />
+    <ClInclude Include="Rolodex.h" />
     <ClInclude Include="StatBlock_Fates.h" />
     <ClInclude Include="Job_Fates.h" />
     <ClInclude Include="Stat_FE.h" />
     <ClInclude Include="Unit_Base_Fates.h" />
-    <ClInclude Include="Unit_Factory_Fates.h" />
+    <ClInclude Include="Unit_Full_Fates.h" />
+    <ClInclude Include="Unit_Plan_Fates.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Ability_FE.cpp" />
@@ -158,12 +163,14 @@
     <ClCompile Include="Basic_blocks_FE.cpp" />
     <ClCompile Include="Bonus_statblock.cpp" />
     <ClCompile Include="Job_List_Fates.cpp" />
+    <ClCompile Include="Rolodex.cpp" />
     <ClCompile Include="StatBlock_Fates.cpp" />
     <ClCompile Include="Job_Fates.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="Stat_FE.cpp" />
     <ClCompile Include="Unit_Base_Fates.cpp" />
-    <ClCompile Include="Unit_Factory_Fates.cpp" />
+    <ClCompile Include="Unit_Full_Fates.cpp" />
+    <ClCompile Include="Unit_Plan_Fates.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="JSON\Skills\PersonalSkills.json" />

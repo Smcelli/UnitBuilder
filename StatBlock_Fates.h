@@ -6,17 +6,16 @@
 using namespace fe_fates;
 class StatBlock_Fates
 {
-private:
-	std::array <Stat_FE, fe_fates::BLOCK_SIZE> block_{ {
-			Stat_FE{fates_names.at(Stat_places::hp + ID_STAT)},
-			Stat_FE{fates_names.at(Stat_places::str + ID_STAT)},
-			Stat_FE{fates_names.at(Stat_places::mag + ID_STAT)},
-			Stat_FE{fates_names.at(Stat_places::skl + ID_STAT)},
-			Stat_FE{fates_names.at(Stat_places::spd + ID_STAT)},
-			Stat_FE{fates_names.at(Stat_places::lck + ID_STAT)},
-			Stat_FE{fates_names.at(Stat_places::def + ID_STAT)},
-			Stat_FE{fates_names.at(Stat_places::res + ID_STAT)},
-			} };
+protected:
+	std::array <Stat_FE, fe_fates::BLOCK_SIZE> block_{
+			Stat_FE{"Max HP"},
+			Stat_FE{"Stength"},
+			Stat_FE{"Magic"},
+			Stat_FE{"Skill"},
+			Stat_FE{"Speed"},
+			Stat_FE{"Luck"},
+			Stat_FE{"Defence"},
+			Stat_FE{"Resistance"} };
 	
 public:
 	virtual ~StatBlock_Fates() = default;
@@ -42,6 +41,6 @@ public:
 	StatBlock_Fates& add_block(const StatBlock_Fates&);
 	StatBlock_Fates& subtract_block(const StatBlock_Fates&);
 	void debug_console_print() const;
-
+	void convert_to_active();
 };
 

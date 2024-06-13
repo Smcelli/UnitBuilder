@@ -1,10 +1,7 @@
 #include "StatBlock_Fates.h"
 
-
 StatBlock_Fates::StatBlock_Fates(const StatBlock_Fates& source)
-{
-	block_ = source.block_;
-}
+	:block_(source.block_) {}
 
 void swap(StatBlock_Fates& left_side, StatBlock_Fates& right_side)
 {
@@ -80,7 +77,7 @@ StatBlock_Fates& StatBlock_Fates::add_block(const StatBlock_Fates& other)
 		std::cout << " DEBUG Stat_block add_block : size does not match ";
 		return *this;
 	}
-	for (auto i = 0; i < this->block_.size(); i++) {
+	for (uint16_t i = 0; i < block_.size(); i++) {
 		this->block_[i] += other.block_[i];
 	}
 	return *this;
@@ -92,7 +89,7 @@ StatBlock_Fates& StatBlock_Fates::subtract_block(const StatBlock_Fates& other)
 		std::cout << " DEBUG Stat_block subtract_block : size does not match ";
 		return *this;
 	}
-	for (auto i = 0; i < this->block_.size(); i++) {
+	for (uint16_t i = 0; i < this->block_.size(); i++) {
 		this->block_[i] -= other.block_[i];
 	}
 	return *this;
@@ -102,6 +99,14 @@ void StatBlock_Fates::debug_console_print() const
 {
 	for (const auto& stats : block_) {
 		stats.debug_console_print();
+	}
+}
+
+void StatBlock_Fates::convert_to_active()
+{
+	for (auto& stats : block_){
+		stats.stat *= 100;
+		stats.growth *= 100;
 	}
 }
 

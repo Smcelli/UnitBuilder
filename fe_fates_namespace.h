@@ -5,26 +5,45 @@
 #include <iostream>
 
 namespace fe_fates {
-	const uint16_t BLOCK_SIZE = 8,
-		ID_STAT = 4,
-		ID_JOB_UNIQUE = 16,
-		ID_JOB_COMMON = 32,
-		ID_SKILL_JOB = 128,
-		ID_UNIT = 256,
-		ID_SKILL_UNIT = 512;
 
+	const uint16_t BLOCK_SIZE = 8,
+		ID_JOB = 256,
+		ID_SKILL_JOB = 512,
+		ID_UNIT = 1024,
+		ID_SKILL_UNIT = 2048;
+
+
+	inline uint16_t id_type(uint16_t id, uint16_t type) {
+		if (id < type)
+			return id + type;
+		if (id > type * 2)
+			return 0;
+		return id;
+	};
+	inline uint16_t id_job(uint16_t id) {
+		id_type(id, ID_JOB);
+	};
+	inline uint16_t id_skill_job(uint16_t id) {
+		id_type(id, ID_SKILL_JOB);
+	};
+	inline uint16_t id_unit(uint16_t id) {
+		id_type(id, ID_UNIT);
+	};
+	inline uint16_t id_skill_unit(uint16_t id) {
+		id_type(id, ID_SKILL_UNIT);
+	};
 
 	enum Stat_places : uint16_t { hp, str, mag, skl, spd, lck, def, res, mov };
 	const std::unordered_map<uint16_t, std::string> fates_names {
-		{hp  + ID_STAT, "Max Health"},
-		{str + ID_STAT, "Strength"},
-		{mag + ID_STAT, "Magic"},
-		{skl + ID_STAT, "Skill"},
-		{spd + ID_STAT, "Speed"},
-		{lck + ID_STAT, "Luck"},
-		{def + ID_STAT, "Defence"},
-		{res + ID_STAT, "Resistance"},
-		{mov + ID_STAT, "Movement"}
+		{hp, "Max Health"},
+		{str, "Strength"},
+		{mag, "Magic"},
+		{skl, "Skill"},
+		{spd, "Speed"},
+		{lck, "Luck"},
+		{def, "Defence"},
+		{res, "Resistance"},
+		{mov, "Movement"}
 	};
 
 	const enum Skill_requirements : uint16_t {
@@ -36,71 +55,73 @@ namespace fe_fates {
 
 	const enum Job_ids : uint16_t {
 		debug_job,
-		nohr_prince = 3,
+		nohr_prince = 4,
 		hoshido_nob,
 		nohr_nob,
-		songstress = 6,
-		kitsune = 9,
+		songstress = 8,
+		kitsune = 12,
 		ninetails,
-		wolfskin = 12,
+		wolfskin = 16,
 		wolfssegner,
+		end_unique_jobs = 20,
 
-		samurai			= 18,
+		start_common_jobs = 24,
+		samurai			= 28,
 		sword_master,
 		master_arms_sam,
-		villager		= 21,
+		villager		= 32,
 		master_arms_vil,
 		merchant_vil,
-		apothecary		= 24,
+		apothecary		= 36,
 		merchant_apo,
 		mechanist_apo,
-		ninja			= 27,
+		ninja			= 40,
 		mechanist_nin,
 		master_nin,
-		oni_savage		= 30,
+		oni_savage		= 44,
 		oni_chief,
 		blacksmith,
-		spear_fighter	= 33,
+		spear_fighter	= 48,
 		spear_master,
 		basara_spr,
-		diviner			= 36,
+		diviner			= 52,
 		basara_div,
 		onmyoji_div,
-		monk			= 39,
+		monk			= 56,
 		onmyoji_mon,
 		great_master,
-		shrine_maiden	= 42,
+		shrine_maiden	= 60,
 		onmyoji_shr,
 		priestess,
-		sky_knight		= 45,
+		sky_knight		= 64,
 		falcon_knight,
 		kinshi_sky,
-		archer			= 48,
+		archer			= 68,
 		kinshi_arc,
 		sniper,
 
-		cavalier		= 51,
+		cavalier		= 72,
 		paladin,
 		great_knight_cav,
-		knight			= 54,
+		knight			= 76,
 		great_knight_kni,
 		general,
-		fighter			= 57,
+		fighter			= 80,
 		berserker,
 		hero_fight,
-		mercenary		= 60,
+		mercenary		= 84,
 		hero_merc,
 		bow_knight_merc,
-		outlaw			= 63,
+		outlaw			= 88,
 		bow_knight_out,
 		adventurer,
-		wyvern_rider	= 66,
+		wyvern_rider	= 72,
 		wyvern_lord,
 		malig_knight,
-		dark_mage		= 69,
+		dark_mage		= 76,
 		sorcerer,
 		dark_knight,
-		troubadour		= 72,
+		troubadour		= 80,
 		strategist,
 		maid_butler
 	};

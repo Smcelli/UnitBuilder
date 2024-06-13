@@ -1,5 +1,35 @@
 #include "Unit_Base_Fates.h"
 
+std::vector<uint16_t> Unit_Base_Fates::get_jobs() const
+{
+	return std::vector<uint16_t> {job_prim, job_sec, job_tert};
+}
+
+uint16_t Unit_Base_Fates::get_primary_job() const
+{
+	return job_prim;
+}
+
+uint16_t Unit_Base_Fates::get_promotion() const
+{
+	return promotion;
+}
+
+uint16_t Unit_Base_Fates::get_lvl() const
+{
+	return level;
+}
+
+std::string Unit_Base_Fates::get_name() const
+{
+	return name;
+}
+
+uint16_t Unit_Base_Fates::get_id() const
+{
+	return id;
+}
+
 Unit_Base_Fates::Unit_Base_Fates(const Unit_Base_Fates& source)
 	: StatBlock_Fates(	source),
 	name(				source.name),
@@ -12,7 +42,7 @@ Unit_Base_Fates::Unit_Base_Fates(const Unit_Base_Fates& source)
 	job_sec(			source.job_sec),
 	job_tert(			source.job_tert){}
 
-Unit_Base_Fates Unit_Base_Fates::operator=(Unit_Base_Fates temp)
+Unit_Base_Fates& Unit_Base_Fates::operator=(Unit_Base_Fates temp)
 {
 	swap(*this, temp);
 	return *this;

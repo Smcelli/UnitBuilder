@@ -15,6 +15,8 @@ public:
 	Job_List_Fates& operator=(Job_List_Fates);
 	Job_List_Fates(Job_List_Fates&&) noexcept;
 
+	Job_Fates get_job(uint16_t) const;
+	Job_Fates* get_job_ptr(uint16_t);
 	void add_job(Job_Fates);
 	void add_job(uint16_t duplicate, uint16_t original);
 	void debug_console_print() const;

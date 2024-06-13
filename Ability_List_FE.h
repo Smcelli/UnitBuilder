@@ -1,6 +1,5 @@
 #pragma once
 #include "Ability_FE.h"
-#include "fe_fates_namespace.h"
 #include <unordered_map>
 
 class Ability_List_Fates

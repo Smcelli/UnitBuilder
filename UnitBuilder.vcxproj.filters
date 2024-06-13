@@ -51,7 +51,13 @@
     <ClInclude Include="Bonus_statblock.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Unit_Factory_Fates.h">
+    <ClInclude Include="Rolodex.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Unit_Full_Fates.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Unit_Plan_Fates.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -86,7 +92,13 @@
     <ClCompile Include="Bonus_statblock.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Unit_Factory_Fates.cpp">
+    <ClCompile Include="Rolodex.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Unit_Full_Fates.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Unit_Plan_Fates.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
