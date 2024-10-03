@@ -1,4 +1,4 @@
-#include "Ability_List_FE.h"
+#include <Ability_List_FE.h>
 
 Ability_List_Fates::Ability_List_Fates(const Ability_List_Fates& source)
 {
@@ -21,12 +21,7 @@ Ability_List_Fates::Ability_List_Fates(Ability_List_Fates&& source) noexcept
 {
     swap(*this, source);
 }
-/*
-void Ability_List_Fates::add_skill(Ability_Job_Fates ability)
-{
-    abilities.try_emplace(ability.id, ability);
-}
-*/
+
 void Ability_List_Fates::add_skill(Ability_FE ability)
 {
     abilities.try_emplace(ability.id, ability);

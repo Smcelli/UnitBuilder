@@ -1,11 +1,11 @@
 #pragma once
-#include "Ability_FE.h"
+#include <Ability_FE.h>
 #include <unordered_map>
 
 class Ability_List_Fates
 {
 private:
-	std::unordered_map<uint16_t,Ability_FE> abilities;
+	std::unordered_map<int16_t,Ability_FE> abilities;
 
 public:
 	~Ability_List_Fates() = default;

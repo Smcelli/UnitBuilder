@@ -1,10 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
     <Filter Include="Header Files">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
@@ -13,98 +9,133 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Resource Files\JSON">
-      <UniqueIdentifier>{f8b0d449-12d1-4bbd-8a14-857a06214f04}</UniqueIdentifier>
+    <Filter Include="Header Files\Rolodex">
+      <UniqueIdentifier>{b8de0595-0bde-4784-aa43-d45e43d2b1b2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files\JSON\Skills">
-      <UniqueIdentifier>{ad50c7ee-7bd6-4a3a-b6b0-da0e0a8c2577}</UniqueIdentifier>
+    <Filter Include="Header Files\Rolodex\source">
+      <UniqueIdentifier>{3f0da1fe-4333-4cfa-81c5-68b22580d0e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Misc">
+      <UniqueIdentifier>{e39e124c-537d-4e58-b1c1-a35a5b6be9d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Misc\Source">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Base">
+      <UniqueIdentifier>{4aa376fc-71da-4edb-afec-16a10b9da090}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Base\source">
+      <UniqueIdentifier>{ba629984-8506-4b37-bb78-bd2cfccd48e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Unit">
+      <UniqueIdentifier>{187c3621-4471-4a24-b5eb-341f781be98f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Unit\source">
+      <UniqueIdentifier>{221869ea-3e13-48c8-87d2-008bcbd1da1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Stats">
+      <UniqueIdentifier>{d29e5048-c6eb-4e90-bc8a-91c6dfe8a31e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Stats\source">
+      <UniqueIdentifier>{d84c4ecd-efa3-48fc-bbe7-72f9bb8fb819}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Stat_FE.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="UnitBuilder\Job_Fates.h">
+      <Filter>Header Files\Base</Filter>
     </ClInclude>
-    <ClInclude Include="Job_Fates.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="UnitBuilder\Unit_Base_Fates.h">
+      <Filter>Header Files\Base</Filter>
     </ClInclude>
-    <ClInclude Include="StatBlock_Fates.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="UnitBuilder\Rolodex.h">
+      <Filter>Header Files\Rolodex</Filter>
     </ClInclude>
-    <ClInclude Include="Unit_Base_Fates.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="UnitBuilder\fe_fates_namespace.h">
+      <Filter>Header Files\Rolodex</Filter>
     </ClInclude>
-    <ClInclude Include="Ability_List_FE.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="UnitBuilder\Ability_List_FE.h">
+      <Filter>Header Files\Rolodex</Filter>
     </ClInclude>
-    <ClInclude Include="Basic_blocks_FE.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="UnitBuilder\Bonus_statblock.h">
+      <Filter>Header Files\Stats</Filter>
     </ClInclude>
-    <ClInclude Include="Ability_FE.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="UnitBuilder\Stat_FE.h">
+      <Filter>Header Files\Stats</Filter>
     </ClInclude>
-    <ClInclude Include="fe_fates_namespace.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="UnitBuilder\Ability_FE.h">
+      <Filter>Header Files\Misc</Filter>
     </ClInclude>
-    <ClInclude Include="Job_List_Fates.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="UnitBuilder\Basic_blocks_FE.h">
+      <Filter>Header Files\Misc</Filter>
     </ClInclude>
-    <ClInclude Include="Bonus_statblock.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="UnitBuilder\Bonus_list.h">
+      <Filter>Header Files\Stats</Filter>
     </ClInclude>
-    <ClInclude Include="Rolodex.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="UnitBuilder\Unit_Corrin.h">
+      <Filter>Header Files\Unit</Filter>
     </ClInclude>
-    <ClInclude Include="Unit_Full_Fates.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="UnitBuilder\Unit_Full_Fates.h">
+      <Filter>Header Files\Unit</Filter>
     </ClInclude>
-    <ClInclude Include="Unit_Plan_Fates.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="UnitBuilder\Unit_Plan_Fates.h">
+      <Filter>Header Files\Unit</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitBuilder\Unit_Active.h">
+      <Filter>Header Files\Unit</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitBuilder\StatBlock_Fates.h">
+      <Filter>Header Files\Base</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Stat_FE.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="UnitBuilder\Ability_FE.cpp">
+      <Filter>Header Files\Misc\Source</Filter>
     </ClCompile>
-    <ClCompile Include="Source.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="UnitBuilder\Basic_blocks_FE.cpp">
+      <Filter>Header Files\Misc\Source</Filter>
     </ClCompile>
-    <ClCompile Include="Job_Fates.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="UnitBuilder\Source.cpp">
+      <Filter>Header Files\Misc\Source</Filter>
     </ClCompile>
-    <ClCompile Include="StatBlock_Fates.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="UnitBuilder\Job_Fates.cpp">
+      <Filter>Header Files\Base\source</Filter>
     </ClCompile>
-    <ClCompile Include="Unit_Base_Fates.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="UnitBuilder\Unit_Base_Fates.cpp">
+      <Filter>Header Files\Base\source</Filter>
     </ClCompile>
-    <ClCompile Include="Ability_List_FE.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="UnitBuilder\Bonus_statblock.cpp">
+      <Filter>Header Files\Stats\source</Filter>
     </ClCompile>
-    <ClCompile Include="Basic_blocks_FE.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="UnitBuilder\Stat_FE.cpp">
+      <Filter>Header Files\Stats\source</Filter>
     </ClCompile>
-    <ClCompile Include="Ability_FE.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="UnitBuilder\Ability_List_FE.cpp">
+      <Filter>Header Files\Rolodex\source</Filter>
     </ClCompile>
-    <ClCompile Include="Job_List_Fates.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="UnitBuilder\Rolodex.cpp">
+      <Filter>Header Files\Rolodex\source</Filter>
     </ClCompile>
-    <ClCompile Include="Bonus_statblock.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="fe_fates_namespace.cpp">
+      <Filter>Header Files\Rolodex\source</Filter>
     </ClCompile>
-    <ClCompile Include="Rolodex.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="UnitBuilder\Bonus_list.cpp">
+      <Filter>Header Files\Stats\source</Filter>
     </ClCompile>
-    <ClCompile Include="Unit_Full_Fates.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="UnitBuilder\Unit_Active.cpp">
+      <Filter>Header Files\Unit\source</Filter>
     </ClCompile>
-    <ClCompile Include="Unit_Plan_Fates.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="UnitBuilder\Unit_Corrin.cpp">
+      <Filter>Header Files\Unit\source</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="JSON\Skills\PersonalSkills.json">
-      <Filter>Resource Files\JSON\Skills</Filter>
-    </None>
+    <ClCompile Include="UnitBuilder\Unit_Full_Fates.cpp">
+      <Filter>Header Files\Unit\source</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitBuilder\Unit_Plan_Fates.cpp">
+      <Filter>Header Files\Unit\source</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitBuilder\StatBlock_Fates.cpp">
+      <Filter>Header Files\Base\source</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

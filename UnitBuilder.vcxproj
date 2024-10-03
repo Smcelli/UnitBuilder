@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -73,6 +73,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>E:\repos\UnitBuilder\UnitBuilder;$(IncludePath)</IncludePath>
+    <ExternalIncludePath>E:\repos\vcpkg\installed\x64-windows\include;$(ExternalIncludePath)</ExternalIncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -82,6 +84,9 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Label="Vcpkg">
+    <VcpkgEnableManifest>true</VcpkgEnableManifest>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -143,37 +148,39 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Ability_FE.h" />
-    <ClInclude Include="Ability_List_FE.h" />
-    <ClInclude Include="Basic_blocks_FE.h" />
-    <ClInclude Include="Bonus_statblock.h" />
-    <ClInclude Include="fe_fates_namespace.h" />
-    <ClInclude Include="Job_List_Fates.h" />
-    <ClInclude Include="Rolodex.h" />
-    <ClInclude Include="StatBlock_Fates.h" />
-    <ClInclude Include="Job_Fates.h" />
-    <ClInclude Include="Stat_FE.h" />
-    <ClInclude Include="Unit_Base_Fates.h" />
-    <ClInclude Include="Unit_Full_Fates.h" />
-    <ClInclude Include="Unit_Plan_Fates.h" />
+    <ClInclude Include="UnitBuilder\Ability_FE.h" />
+    <ClInclude Include="UnitBuilder\Ability_List_FE.h" />
+    <ClInclude Include="UnitBuilder\Basic_blocks_FE.h" />
+    <ClInclude Include="UnitBuilder\Bonus_list.h" />
+    <ClInclude Include="UnitBuilder\Bonus_statblock.h" />
+    <ClInclude Include="UnitBuilder\fe_fates_namespace.h" />
+    <ClInclude Include="UnitBuilder\Job_Fates.h" />
+    <ClInclude Include="UnitBuilder\Rolodex.h" />
+    <ClInclude Include="UnitBuilder\StatBlock_Fates.h" />
+    <ClInclude Include="UnitBuilder\Stat_FE.h" />
+    <ClInclude Include="UnitBuilder\Unit_Active.h" />
+    <ClInclude Include="UnitBuilder\Unit_Base_Fates.h" />
+    <ClInclude Include="UnitBuilder\Unit_Corrin.h" />
+    <ClInclude Include="UnitBuilder\Unit_Full_Fates.h" />
+    <ClInclude Include="UnitBuilder\Unit_Plan_Fates.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Ability_FE.cpp" />
-    <ClCompile Include="Ability_List_FE.cpp" />
-    <ClCompile Include="Basic_blocks_FE.cpp" />
-    <ClCompile Include="Bonus_statblock.cpp" />
-    <ClCompile Include="Job_List_Fates.cpp" />
-    <ClCompile Include="Rolodex.cpp" />
-    <ClCompile Include="StatBlock_Fates.cpp" />
-    <ClCompile Include="Job_Fates.cpp" />
-    <ClCompile Include="Source.cpp" />
-    <ClCompile Include="Stat_FE.cpp" />
-    <ClCompile Include="Unit_Base_Fates.cpp" />
-    <ClCompile Include="Unit_Full_Fates.cpp" />
-    <ClCompile Include="Unit_Plan_Fates.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="JSON\Skills\PersonalSkills.json" />
+    <ClCompile Include="fe_fates_namespace.cpp" />
+    <ClCompile Include="UnitBuilder\Ability_FE.cpp" />
+    <ClCompile Include="UnitBuilder\Ability_List_FE.cpp" />
+    <ClCompile Include="UnitBuilder\Basic_blocks_FE.cpp" />
+    <ClCompile Include="UnitBuilder\Bonus_list.cpp" />
+    <ClCompile Include="UnitBuilder\Bonus_statblock.cpp" />
+    <ClCompile Include="UnitBuilder\Job_Fates.cpp" />
+    <ClCompile Include="UnitBuilder\Rolodex.cpp" />
+    <ClCompile Include="UnitBuilder\Source.cpp" />
+    <ClCompile Include="UnitBuilder\StatBlock_Fates.cpp" />
+    <ClCompile Include="UnitBuilder\Stat_FE.cpp" />
+    <ClCompile Include="UnitBuilder\Unit_Active.cpp" />
+    <ClCompile Include="UnitBuilder\Unit_Base_Fates.cpp" />
+    <ClCompile Include="UnitBuilder\Unit_Corrin.cpp" />
+    <ClCompile Include="UnitBuilder\Unit_Full_Fates.cpp" />
+    <ClCompile Include="UnitBuilder\Unit_Plan_Fates.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

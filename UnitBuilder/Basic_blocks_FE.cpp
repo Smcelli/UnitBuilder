@@ -1,4 +1,4 @@
-#include "Basic_blocks_FE.h"
+#include <Basic_blocks_FE.h>
 
 void Support_Table_FE::emplace(Support_FE temp)
 {
@@ -16,7 +16,7 @@ void Support_Table_FE::emplace(Support_FE temp)
 	}
 }
 
-void Support_Table_FE::emplace(uint16_t unit, int type, unordered_set<uint16_t> supports)
+void Support_Table_FE::emplace(int16_t unit, int type, unordered_set<int16_t> supports)
 {
 	using fe_fates::ID_UNIT;
 	switch (type) {
@@ -35,25 +35,25 @@ void Support_Table_FE::emplace(uint16_t unit, int type, unordered_set<uint16_t> 
 	}
 }
 
-unordered_set<uint16_t> Support_Table_FE::get_marraiges(uint16_t unit) const
+unordered_set<int16_t> Support_Table_FE::get_marraiges(int16_t unit) const
 {
 	auto target = marriages.find(unit);
 	return target->second;
 }
 
-unordered_set<uint16_t> Support_Table_FE::get_friends(uint16_t unit) const
+unordered_set<int16_t> Support_Table_FE::get_friends(int16_t unit) const
 {
 	auto target = friends.find(unit);
 	return target->second;
 }
 
-pair<uint16_t, uint16_t> Support_Table_FE::get_children(uint16_t unit) const
+pair<int16_t, int16_t> Support_Table_FE::get_children(int16_t unit) const
 {
 	auto target = children.find(unit);
 	return target->second;
 }
 
-pair<uint16_t, uint16_t> Support_Table_FE::get_parents(uint16_t unit) const
+pair<int16_t, int16_t> Support_Table_FE::get_parents(int16_t unit) const
 {
 	auto target = children.find(unit);
 	return target->second;
@@ -86,24 +86,24 @@ void Support_Table_FE::debug_console_print() const
 
 }
 
-void Support_Table_FE::emplace(uint16_t unit1, uint16_t unit2, unordered_map<uint16_t, unordered_set<uint16_t>>* type) {
-	unordered_map< uint16_t, unordered_set<uint16_t>>::iterator target = type->find(unit1);
+void Support_Table_FE::emplace(int16_t unit1, int16_t unit2, unordered_map<int16_t, unordered_set<int16_t>>* type) {
+	unordered_map< int16_t, unordered_set<int16_t>>::iterator target = type->find(unit1);
 	if (target == type->end()) {
-		type->try_emplace(unit1, std::unordered_set<uint16_t> {unit2});
+		type->try_emplace(unit1, std::unordered_set<int16_t> {unit2});
 	}
 	else {
 		target->second.insert(unit2);
 	}
 }
 
-void Support_Table_FE::emplace_primary_child(uint16_t parent, uint16_t child) {
-	unordered_map< uint16_t, pair<uint16_t, uint16_t>>::iterator target = children.find(parent);
+void Support_Table_FE::emplace_primary_child(int16_t parent, int16_t child) {
+	unordered_map< int16_t, pair<int16_t, int16_t>>::iterator target = children.find(parent);
 	if (target == children.end()) {
-		children.try_emplace(parent, std::pair<uint16_t, uint16_t> {child, 0});
+		children.try_emplace(parent, std::pair<int16_t, int16_t> {child, 0});
 	}
 	
 	target = parents.find(child);
 	if (target == parents.end()) {
-		parents.try_emplace(child, std::pair<uint16_t, uint16_t> {parent, 0});
+		parents.try_emplace(child, std::pair<int16_t, int16_t> {parent, 0});
 	}
 }
