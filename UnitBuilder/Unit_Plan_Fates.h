@@ -6,6 +6,7 @@
 
 class Unit_Plan_Fates
 {
+
 public:
 	Unit_Plan_Fates(int16_t, int16_t);
 
@@ -26,6 +27,10 @@ public:
 	bool has_promotion();
 	bool in_promotion_range(int16_t);
 
+	void build_learned_abilities();
+
+	std::vector<int16_t> get_jobs_abilities(int16_t job_id) const;
+
 
 	~Unit_Plan_Fates() = default;
 	Unit_Plan_Fates() = default;
@@ -35,7 +40,9 @@ public:
 	Unit_Plan_Fates(Unit_Plan_Fates&&) noexcept;
 
 private:
-	std::map<int16_t, int16_t> plan;
-	std::map<int16_t, int16_t>::iterator promotion;
+	std::map<int16_t, int16_t> plan_;
+	std::map<int16_t, int16_t>::iterator promotion_;
+
+	std::vector<int16_t, int16_t> learned_abilities_;
 };
 

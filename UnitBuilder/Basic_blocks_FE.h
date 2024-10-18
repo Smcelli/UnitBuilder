@@ -7,7 +7,6 @@
 #include <unordered_set>
 #include <utility>
 
-using std::unordered_map, std::pair, std::unordered_set;
 
 struct Weapon_Rank_FE
 {
@@ -35,19 +34,19 @@ struct Support_FE {
 struct Support_Table_FE {
 	
 	void emplace(Support_FE);
-	void emplace(int16_t unit, int type, unordered_set<int16_t> supports);
-	unordered_set<int16_t> get_marraiges(int16_t) const;
-	unordered_set<int16_t> get_friends(int16_t) const;
-	pair<int16_t, int16_t> get_children(int16_t) const;
-	pair<int16_t, int16_t> get_parents(int16_t) const;
+	void emplace(int16_t unit, int type, std::unordered_set<int16_t> supports);
+	std::unordered_set<int16_t> get_marraiges(int16_t) const;
+	std::unordered_set<int16_t> get_friends(int16_t) const;
+	std::pair<int16_t, int16_t> get_children(int16_t) const;
+	std::pair<int16_t, int16_t> get_parents(int16_t) const;
 	void debug_console_print() const;
 
 private:
-	unordered_map<int16_t, unordered_set< int16_t>> marriages;
-	unordered_map<int16_t, unordered_set< int16_t>> friends;
-	unordered_map<int16_t, pair<int16_t, int16_t>> children;
-	unordered_map<int16_t, pair<int16_t, int16_t>> parents;
-	void emplace(int16_t unit1, int16_t unit2, unordered_map<int16_t, unordered_set<int16_t>>* type);
+	std::unordered_map<int16_t, std::unordered_set< int16_t>> marriages;
+	std::unordered_map<int16_t, std::unordered_set< int16_t>> friends;
+	std::unordered_map<int16_t, std::pair<int16_t, int16_t>> children;
+	std::unordered_map<int16_t, std::pair<int16_t, int16_t>> parents;
+	void emplace(int16_t unit1, int16_t unit2, std::unordered_map<int16_t, std::unordered_set<int16_t>>* type);
 	void emplace_primary_child(int16_t, int16_t);	
 };
 

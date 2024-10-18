@@ -1,6 +1,6 @@
 #include "Unit_Base_Fates.h"
 
-Unit_Base_Fates::Unit_Base_Fates(std::string name, 
+Unit_Base_Fates::Unit_Base_Fates(std::string name, bool female,
 	StatBlock_Fates block, 
 	Bonus_list pair_bonus, 
 	std::vector<int16_t> jobs, 
@@ -9,6 +9,7 @@ Unit_Base_Fates::Unit_Base_Fates(std::string name,
 	int16_t level_offset)
 	:StatBlock_Fates(block),
 	name_(name),
+	gender_female_(female),
 	jobs_(jobs),
 	pair_bonus(pair_bonus),
 	id_(fe_fates::id_unit(id)), level_(level), level_offset_(level_offset) 
@@ -23,9 +24,12 @@ Unit_Base_Fates::Unit_Base_Fates(std::string name,
 std::vector<int16_t> Unit_Base_Fates::jobs() const
 {
 	auto result = jobs_;
-	auto it = result.begin();
-	if (*it % 4)
-		*it = *it - *it % 4;
+	for (auto it = result.begin(); it == result.end(); it++) {
+		if (*it % 4)
+			*it = *it - *it % 4;
+		if (fe_fates::id_job_is_gendered(*it))
+			*it = fe_fates::id_job_get_genderless(*it);
+	}
 	return result;
 }
 
@@ -50,5 +54,6 @@ void swap( Unit_Base_Fates& left,  Unit_Base_Fates& right)
 	swap(left.id_, right.id_);
 	swap(left.level_, right.level_);
 	swap(left.level_offset_,	right.level_offset_);
+	swap(left.gender_female_, right.gender_female_);
 	swap(static_cast<StatBlock_Fates&>(left), static_cast<StatBlock_Fates&>(right));
 }

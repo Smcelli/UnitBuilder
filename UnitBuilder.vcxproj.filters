@@ -40,6 +40,12 @@
     <Filter Include="Header Files\Stats\source">
       <UniqueIdentifier>{d84c4ecd-efa3-48fc-bbe7-72f9bb8fb819}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Ability">
+      <UniqueIdentifier>{5f210635-7e01-4269-9205-37b42a0a0ed0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Ability\source">
+      <UniqueIdentifier>{0166fa1e-b664-47f5-9d4e-075663a4f9cd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="UnitBuilder\Job_Fates.h">
@@ -54,17 +60,11 @@
     <ClInclude Include="UnitBuilder\fe_fates_namespace.h">
       <Filter>Header Files\Rolodex</Filter>
     </ClInclude>
-    <ClInclude Include="UnitBuilder\Ability_List_FE.h">
-      <Filter>Header Files\Rolodex</Filter>
-    </ClInclude>
     <ClInclude Include="UnitBuilder\Bonus_statblock.h">
       <Filter>Header Files\Stats</Filter>
     </ClInclude>
     <ClInclude Include="UnitBuilder\Stat_FE.h">
       <Filter>Header Files\Stats</Filter>
-    </ClInclude>
-    <ClInclude Include="UnitBuilder\Ability_FE.h">
-      <Filter>Header Files\Misc</Filter>
     </ClInclude>
     <ClInclude Include="UnitBuilder\Basic_blocks_FE.h">
       <Filter>Header Files\Misc</Filter>
@@ -87,11 +87,14 @@
     <ClInclude Include="UnitBuilder\StatBlock_Fates.h">
       <Filter>Header Files\Base</Filter>
     </ClInclude>
+    <ClInclude Include="UnitBuilder\Ability_List_FE.h">
+      <Filter>Header Files\Ability</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitBuilder\Ability_FE.h">
+      <Filter>Header Files\Ability</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="UnitBuilder\Ability_FE.cpp">
-      <Filter>Header Files\Misc\Source</Filter>
-    </ClCompile>
     <ClCompile Include="UnitBuilder\Basic_blocks_FE.cpp">
       <Filter>Header Files\Misc\Source</Filter>
     </ClCompile>
@@ -109,9 +112,6 @@
     </ClCompile>
     <ClCompile Include="UnitBuilder\Stat_FE.cpp">
       <Filter>Header Files\Stats\source</Filter>
-    </ClCompile>
-    <ClCompile Include="UnitBuilder\Ability_List_FE.cpp">
-      <Filter>Header Files\Rolodex\source</Filter>
     </ClCompile>
     <ClCompile Include="UnitBuilder\Rolodex.cpp">
       <Filter>Header Files\Rolodex\source</Filter>
@@ -136,6 +136,12 @@
     </ClCompile>
     <ClCompile Include="UnitBuilder\StatBlock_Fates.cpp">
       <Filter>Header Files\Base\source</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitBuilder\Ability_FE.cpp">
+      <Filter>Header Files\Ability\source</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitBuilder\Ability_List_FE.cpp">
+      <Filter>Header Files\Ability\source</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

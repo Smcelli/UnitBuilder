@@ -3,12 +3,13 @@
 #include <algorithm>
 #include <vector>
 #include <Bonus_list.h>
+#include <Ability_FE.h>
 
 class Unit_Base_Fates : public StatBlock_Fates
 {
 	friend class Rolodex;
 public:
-	Unit_Base_Fates(std::string name,
+	Unit_Base_Fates(std::string name, bool female,
 		StatBlock_Fates block,
 		Bonus_list pair_bonus,
 		std::vector<int16_t> jobs,
@@ -16,9 +17,11 @@ public:
 
 	std::string name() { return name_; }
 	int16_t id() const {return id_;};
+	bool is_female() const { return gender_female_; };
 	std::pair<int16_t, int16_t> level() { return std::pair<int16_t, int16_t> {level_, level_offset_}; };
 	std::vector<int16_t> jobs() const;
 	int16_t get_prim_job() const { return jobs_[0]; };
+	int16_t get_prim_job_base() const { return fe_fates::id_job_base(jobs_[0]); };
 	void set_jobs(std::vector<int16_t> const &new_jobs) { jobs_ = new_jobs; };
 	void debug_console_print() const;
 
@@ -31,7 +34,8 @@ public:
 		level_(source.level_),
 		level_offset_(source.level_offset_),
 		pair_bonus(source.pair_bonus),
-		jobs_(source.jobs_) {};
+		jobs_(source.jobs_),
+		gender_female_(source.gender_female_){};
 	friend void swap(Unit_Base_Fates&, Unit_Base_Fates&);
 	Unit_Base_Fates& operator= (Unit_Base_Fates);
 	Unit_Base_Fates(Unit_Base_Fates&& source) noexcept :Unit_Base_Fates() { swap(*this, source); };
@@ -41,4 +45,7 @@ private:
 	std::vector<int16_t> jobs_;
 	Bonus_list pair_bonus;
 	int16_t id_, level_, level_offset_;
+	Ability_FE personal_skill;
+	bool gender_female_;
+
 };

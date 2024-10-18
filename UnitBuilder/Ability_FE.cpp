@@ -37,7 +37,7 @@ Ability_FE::Ability_FE(Ability_FE&& source) noexcept
 
 void Ability_FE::debug_console_print() const
 {
-	std::cout << " " << name << ", id: " << id;
+	std::cout << " " << name;
 }
 
 Ability_Job_Fates::Ability_Job_Fates(const Ability_Job_Fates& source)

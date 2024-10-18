@@ -5,7 +5,7 @@
 class Ability_List_Fates
 {
 private:
-	std::unordered_map<int16_t,Ability_FE> abilities;
+	std::unordered_map<int16_t,Ability_FE> abilities_;
 
 public:
 	~Ability_List_Fates() = default;
@@ -18,6 +18,6 @@ public:
 	//void add_skill(Ability_Job_Fates);
 	void add_skill(Ability_FE);
 	void debug_console_print() const;
+protected:
 
 };
-

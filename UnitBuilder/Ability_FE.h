@@ -4,8 +4,8 @@
 
 struct Ability_FE
 {
+	friend class Rolodex;
 	std::string name;
-	int16_t id;
 	
 	virtual ~Ability_FE() = default;
 	Ability_FE() = default;
@@ -14,16 +14,16 @@ struct Ability_FE
 	Ability_FE& operator=(Ability_FE);
 	Ability_FE(Ability_FE&&) noexcept;
 	
-	Ability_FE(std::string name, int16_t id)
-		:name(name),
-		id(id) {}
+	Ability_FE(std::string name)
+		:name(name) {}
 	virtual void debug_console_print() const;
 	virtual void ability_effect() {};
 };
 
 struct Ability_Job_Fates : public Ability_FE
 {
-	int16_t requirement;
+	int16_t id, requirement;
+
 
 	~Ability_Job_Fates() = default;
 	Ability_Job_Fates() = default;
@@ -33,8 +33,10 @@ struct Ability_Job_Fates : public Ability_FE
 	Ability_Job_Fates(Ability_Job_Fates&&) noexcept;
 
 	Ability_Job_Fates(std::string name, int16_t id, int16_t requirement)
-		: requirement(requirement),
-		Ability_FE(name, id){}
+		: Ability_FE(name),
+		requirement(requirement),
+		id(id) {}
+		
 	int16_t get_job_id() const { return id / 2; };
 	void ability_effect() {};
 	void debug_console_print() const;

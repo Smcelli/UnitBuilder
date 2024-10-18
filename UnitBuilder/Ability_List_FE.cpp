@@ -34,5 +34,3 @@ void Ability_List_Fates::debug_console_print() const
         std::cout << std::endl;
     }
 }
-
-

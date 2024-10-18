@@ -4,6 +4,7 @@
 #include <string>
 #include <tuple>
 #include <Bonus_list.h>
+#include <Ability_FE.h>
 
 class Job_Fates : public StatBlock_Fates
 {
@@ -23,6 +24,7 @@ public:
 	std::string name() const { return name_; };
 	int16_t is_promoted_job() const { return id_%4; };
 	int16_t get_unpromoted_id() const { return id_ - (id_ % 4); };
+	std::vector<Ability_Job_Fates> ability_list() const { return ability_list_; };
 	void debug_console_print() const;
 
 	~Job_Fates() = default;
@@ -32,6 +34,7 @@ public:
 		name_(source.name_),
 		id_(source.id_),
 		move_(move_),
+		ability_list_(source.ability_list_),
 		pair_bonus(source.pair_bonus) {};
 	friend void	swap(Job_Fates&, Job_Fates&);
 	Job_Fates& operator=(Job_Fates);
@@ -41,6 +44,9 @@ public:
 protected:
 	std::string name_;
 	int16_t id_, move_;
+	std::vector<Ability_Job_Fates> ability_list_;
 	Bonus_list pair_bonus;
+
+	void add_ability(Ability_Job_Fates ability);
 };
 
